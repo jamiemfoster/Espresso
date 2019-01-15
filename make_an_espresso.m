@@ -6,8 +6,9 @@ clc
 tic
 
 plot_flag=1; % Uses figures 1-4
+checkmass_flag=1; % Uses figure 5
 
-N=50;
+N=40;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define the dimenionless parameters %
@@ -30,7 +31,7 @@ phis=dimensionlessparameters(12);
 dx=1/(N-1);
 x=linspace(0,1,N);
 
-T_end=1;
+T_end=10;
 tout=linspace(0,T_end,1e4);
 
 cl0=zeros(N,1);
@@ -82,4 +83,7 @@ disp('----------------------------')
 
 if plot_flag==1
     plotresults(tout,u,N,x)
+end
+if checkmass_flag==1
+    checkmass(tout,u,x,params)
 end
