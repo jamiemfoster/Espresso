@@ -40,13 +40,7 @@ for i=2:N-1
             +gamma.*bet1*G1(i) ...
             +gamma.*bet2*G2(i);
 end
-% u_ghost = 2*u(N)-u(N-1);
-% du(N)=  -gamma.*(u_ghost-u(N-1))/2/dx ...
-%         +gamma.*Deff*(u_ghost-2*u(N)+u(N-1))/dx^2 ...
-%         +gamma.*bet1*G1(N) ...
-%         +gamma.*bet2*G2(N);
 du(N)=u(N-2)/2 - 2*u(N-1) + 3*u(N)/2;
-% du(N)=u(N-1)-u(N);
 
 % Eqns for cs1
 % j is the index for the particle number (with the j=1 particle at z=0)
